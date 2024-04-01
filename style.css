@@ -1,0 +1,152 @@
+body { 
+    margin: 0;
+    padding: 0;
+    background-image: url(https://static.tildacdn.com/stor3936-6334-4937-b635-306234646338/80896983.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container {
+    width: auto;
+    height: 500px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    filter: drop-shadow(15px 25px 15px  rgb(232, 244, 6));
+    text-transform: uppercase;
+    color: rgb(250, 252, 252);
+    font-family: sans-serif;
+    cursor: pointer;
+    transition: 1s;
+
+}
+
+h1:hover {
+    color: rgb(216, 79, 79);
+    font-size: 50px;
+    font-family: cursive;
+    text-shadow: 0 15px 10px 0 #f4ee;
+}
+
+.gallery {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+    margin: 5% auto 0;
+}
+
+.image-box {
+    margin: 0 1%;
+    flex-grow: 1;
+    flex-basis: 0;
+    transition: .5s;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 8px double wheat;
+    border-radius: 30px 30px 30px 30px;
+    animation: borderAnimation 3s infinite;
+    box-shadow: 15px 0px 15px 0px rgb(79, 205, 125);
+}
+
+@keyframes borderAnimation {
+    0% {
+    border-color: rgb(33, 33, 32);
+    }
+    25% { 
+        border-color: rgb(223, 246, 11);
+    }
+    50% {
+    border-color: rgb(195, 31, 190); 
+    }
+    85% {
+    border-color:  rgb(201, 239, 12);
+    }
+    100% {
+    border-color: rgb(195, 31, 190);
+    }
+    }
+
+.image-box:hover {
+    flex-basis: 50%;
+    transition: 3s;
+    transform: scale(1);
+}
+
+.active {
+    flex-basis: 50%;
+}
+
+.gallery:hover .active {
+    flex-basis: 0;
+}
+
+.image-box:nth-child(1):hover {
+    flex-basis: 50%;
+}
+
+image {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+@media (max-width:1500px) {
+    .container {
+        flex-wrap: wrap;
+        display: flex;
+    }
+    .active {
+        flex-wrap: wrap;
+        display: flex;
+    }
+    .gallery {
+        flex-wrap: wrap;
+        display: flex;
+        width: 70%;
+        height: 50%;
+    }
+    .image-box image {
+        flex-wrap: wrap;
+        display: flex;
+        width: 50%;
+        height: 30%;
+    }
+    h1 {
+        font-size: 25px;
+        text-align: center;
+    }
+}
+
+@media (max-width:500px) {
+    .container {
+        flex-wrap: wrap;
+        display: flex;
+
+    }
+    .active {
+        flex-wrap: wrap;
+        display: flex;
+    }
+    .gallery {
+        flex-wrap: wrap;
+        display: flex;
+        width: 90%;
+        height: 35%;
+    }
+    .image-box image {
+        flex-wrap: wrap;
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+    h1 {
+        font-size: 10px;
+        text-align: center;
+    }
+}
